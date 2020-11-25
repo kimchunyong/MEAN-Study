@@ -1,10 +1,14 @@
 const express = require('express')
+const dotenv = require('dotenv')
 const app = express()
+const DB_URL = "mongodb://localhost:5000/"
 const port = 5000
 
 const moogoose = require('mongoose')
 
-moogoose.connect('mongodb+srv://kimchunyoung:1234@cluster0.2qrgq.mongodb.net/Cluster0?retryWrites=true&w=majority', {
+dotenv.config()
+
+moogoose.connect(process.env.DB_INFO, {
     useNewUrlParser:true,
     useUnifiedTopology:true,
     useCreateIndex: true,
