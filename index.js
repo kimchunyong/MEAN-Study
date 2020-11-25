@@ -1,7 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const app = express();
-const SERVER_PORT = 5000;
 
 const moogoose = require('mongoose');
 
@@ -20,6 +19,6 @@ app.get('/', (req, res) => {
   res.send('Hello World! ~ 안녕하세요.')
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${SERVER_PORT}`)
+app.listen(process.env.PORT, () => {
+  console.log(`Example app listening at http://localhost:${process.env.PORT}`)
 })
