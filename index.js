@@ -1,12 +1,11 @@
-const express = require('express')
-const dotenv = require('dotenv')
-const app = express()
-const DB_URL = "mongodb://localhost:5000/"
-const port = 5000
+const express = require('express');
+const dotenv = require('dotenv');
+const app = express();
+const SERVER_PORT = 5000;
 
-const moogoose = require('mongoose')
+const moogoose = require('mongoose');
 
-dotenv.config()
+dotenv.config();
 
 moogoose.connect(process.env.DB_INFO, {
     useNewUrlParser:true,
@@ -22,5 +21,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Example app listening at http://localhost:${SERVER_PORT}`)
 })
