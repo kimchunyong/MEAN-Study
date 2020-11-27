@@ -12,7 +12,7 @@ moogoose.connect(process.env.DB_INFO, {
     useCreateIndex: true,
     useFindAndModify:false,
 })
-.then(() => console.log('MongoDB Connected...'))
+.then(() => console.log('MongoDB Connected...!!'))
 .catch((err) => console.log(err));
 
 app.get('/', (req, res) => {
